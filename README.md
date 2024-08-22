@@ -1,2 +1,1 @@
-# bosowice_repo
-bosowice websight
+Hello world!
