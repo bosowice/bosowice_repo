@@ -80,7 +80,7 @@
                                                 <li> <a href="#about">O nas</a> </li>
                                                 <li><a href="#simple_offer">Oferta</a></li>
                                                 <li><a href="#gallery">Galeria</a></li>
-                                                <li><a href="#testimonial">Testimonial</a></li>
+                                                <li><a href="#map">Dojazd</a></li>
                                                 <li><a href="#contact">Contact Us</a></li>
 
                                             </ul>
@@ -403,7 +403,7 @@
     </script>
     <script>
         function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
+            var mainMap = new google.maps.Map(document.getElementById('map'), {
                 zoom: 13,
                 center: {
                     lat: 50.52754721240775,
@@ -411,14 +411,15 @@
                 }
             });
 
-            var image = 'icon/loc1.png';
+            var markerIcon = 'icon/loc_red.png';
+
             var placeMarker = new google.maps.Marker({
                 position: {
                     lat: 50.52754721240775,
                     lng: 20.885969433857984
                 },
-                map: map,
-                icon: image
+                map: mainMap,
+                icon: markerIcon
             });
         }
     </script>
