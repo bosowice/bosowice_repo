@@ -284,8 +284,7 @@
     <div class="container-fluid padddd">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 padddd">
             <div class="map_section">
-                <div id="map">
-                </div>
+                <div id="map"></div>
             </div>
         </div>
     </div>
@@ -403,23 +402,20 @@
         }
     </script>
     <script>
-        // --- Google maps script
-        // This example adds a marker to indicate the position of Bondi Beach in Sydney,
-        // Australia.
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 11,
+                zoom: 13,
                 center: {
-                    lat: 40.645037,
-                    lng: -73.880224
-                },
+                    lat: 50.52754721240775,
+                    lng: 20.885969433857984
+                }
             });
 
-            var image = 'images/maps-and-flags.png';
-            var beachMarker = new google.maps.Marker({
+            var image = 'icon/loc1.png';
+            var placeMarker = new google.maps.Marker({
                 position: {
-                    lat: 40.645037,
-                    lng: -73.880224
+                    lat: 50.52754721240775,
+                    lng: 20.885969433857984
                 },
                 map: map,
                 icon: image
@@ -428,7 +424,7 @@
     </script>
 
     <!-- google map js -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP5bdUCcPBO5l7TDy8TrDr4ne1gMylAR8&callback=initMap"></script>
     <!-- end google map js -->
 </body>
 
