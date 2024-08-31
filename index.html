@@ -358,12 +358,23 @@
                         </div>
                     </div>
 
+                    <!-- Mail to-->
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                         <div class="address">
-                            <h3>Subcribe email</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do </p>
-                            <input class="form-control" placeholder="Your Email" type="type" name="Your Email">
-                            <button class="submit-btn">Submit</button>
+                            <h3>Zapytanie</h3>
+                            <form>
+                                <input class="form-control" placeholder="Temat" type="text" id="subject">
+                                <textarea class="textarea" placeholder="Wiadomość" type="text" id="body"></textarea>
+
+                                <button class="submit-btn" onclick="submitForm()">Wyślij</button>
+                            </form>
+                            <script>
+                                function submitForm() {
+                                    var subject = document.getElementById('subject').value;
+                                    var body = document.getElementById('body').value;
+                                    window.location.href = "mailto:witold.banas@yahoo.pl?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+                                }
+                            </script>
                         </div>
                     </div>
 
