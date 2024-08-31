@@ -267,6 +267,35 @@
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
+
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              }
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";
+              dots[slideIndex-1].className += " active";
+            }
+        </script>
     </div>
     <!-- end gallery -->
 
@@ -275,6 +304,29 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 padddd">
             <div class="map_section">
                 <div id="map"></div>
+                <script>
+                    function initMap() {
+                        var mainMap = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 13,
+                            center: {
+                                lat: 50.52754721240775,
+                                lng: 20.885969433857984
+                            }
+                        });
+
+                        var markerIcon = 'icon/loc_red.png';
+
+                        var placeMarker = new google.maps.Marker({
+                            position: {
+                                lat: 50.52754721240775,
+                                lng: 20.885969433857984
+                            },
+                            map: mainMap,
+                            icon: markerIcon
+                        });
+                    }
+                </script>
+                <script src="https://cdn.jsdelivr.net/gh/somanchiu/Keyless-Google-Maps-API@v6.7/mapsJavaScriptAPI.js"></script>
             </div>
         </div>
     </div>
@@ -362,61 +414,6 @@
             });
         });
     </script>
-    <script>
-        // --- Gallery script
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-          showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-          showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-          let i;
-          let slides = document.getElementsByClassName("mySlides");
-          let dots = document.getElementsByClassName("dot");
-          if (n > slides.length) {slideIndex = 1}
-          if (n < 1) {slideIndex = slides.length}
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-          }
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-          }
-          slides[slideIndex-1].style.display = "block";
-          dots[slideIndex-1].className += " active";
-        }
-    </script>
-    <script>
-        function initMap() {
-            var mainMap = new google.maps.Map(document.getElementById('map'), {
-                zoom: 13,
-                center: {
-                    lat: 50.52754721240775,
-                    lng: 20.885969433857984
-                }
-            });
-
-            var markerIcon = 'icon/loc_red.png';
-
-            var placeMarker = new google.maps.Marker({
-                position: {
-                    lat: 50.52754721240775,
-                    lng: 20.885969433857984
-                },
-                map: mainMap,
-                icon: markerIcon
-            });
-        }
-    </script>
-
-    <!-- google map js -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP5bdUCcPBO5l7TDy8TrDr4ne1gMylAR8&callback=initMap"></script>
-    <!-- end google map js -->
 </body>
 
 </html>
